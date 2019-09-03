@@ -1,0 +1,12 @@
+fig, ax = plt.subplots(figsize=(16,9))
+
+ax.plot(aapl_close.index, aapl_close, label='AAPL')
+ax.plot(aapl_close.index, aapl_close.rolling(window=50).mean(), label='50-day moving average')
+ax.plot(aapl_close.index, aapl_close.rolling(window=200).mean(), label ='200-day moving average')
+
+#Im doing to set the x label to Date 
+
+ax.set_xlabel('Date')
+ax.set_ylabel('Closing price ($)')
+ax.legend()
+plt.show()
